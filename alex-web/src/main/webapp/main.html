@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Account Types Display</title>
+
+    <!--imports-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<style>
+    table, th , td  {
+        border: 1px solid grey;
+        border-collapse: collapse;
+        padding: 15px;
+        margin: 15px;
+    }
+    table tr:nth-child(odd) {
+        background-color: #f1f1f1;
+    }
+    table tr:nth-child(even) {
+        background-color: #ffffff;
+    }
+</style>
+<body ng-app="main">
+
+    <table-content></table-content>
+
+
+    <!--import angular resources-->
+    <script src="resources/app/main/main.app.js"></script>
+    <!--<script src="resources/app/login/login.service.js"></script>-->
+    <script src="resources/app/main/main.controller.js"></script>
+    <script src="resources/app/main/main.directive.js"></script>
+    <!--<script type="text/javascript" src="resources/app/login/login.js"></script>-->
+</body>
+</html>

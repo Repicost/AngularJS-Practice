@@ -1,0 +1,19 @@
+<div class="container">
+    <p>ACCOUNTS</p>
+
+    <div ng-controller="mainController">
+        <table ng-repeat="x in accountTypes" border="1">
+            <tr>
+                <th>{{x.desc}}</th>
+                <th>Status: {{x.status}}</th>
+                <!--<td>{{x.accounts}}</td>-->
+            </tr>
+            <tr ng-repeat="account in x.accounts">
+                <td colspan="2">
+                    {{account}}
+                </td>
+            </tr>
+            <!--<td ng-repeat="account in x.accounts">{{account}}</td>-->
+        </table>
+    </div>
+</div>

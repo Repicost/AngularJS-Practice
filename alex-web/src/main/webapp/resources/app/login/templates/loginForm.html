@@ -1,0 +1,39 @@
+<form name="loginForm">
+    <div>
+        <div>
+            <input type="text" name="j_username" ng-model="username" placeholder="User_ID" required>
+            <span ng-show="loginForm.j_username.$invalid">Please fill out username</span>
+        </div>
+        <div>
+            <input type="password" name="j_password" ng-model="password" placeholder="Password" required>
+            <span ng-show="loginForm.j_password.$invalid">Please fill out password</span>
+        </div>
+    </div>
+    <br/>
+    <p>By clicking login you agree to the terms and conditions</p>
+    <p><a href="">Privacy Statement</a></p>
+
+    <div>
+        <button type="button" ng-click="validateForm()">Login</button>
+    </div>
+</form>
+
+<!--<div class="Form">-->
+    <!--<div>-->
+        <!--<div>-->
+            <!--<input type="text" id="username" name="j_username" placeholder="User_ID" />-->
+        <!--</div>-->
+        <!--<span id="usernameAlert"></span>-->
+        <!--<div>-->
+            <!--<input type="text" id="password" name="j_password" placeholder="Password" />-->
+        <!--</div>-->
+        <!--<span id="passwordAlert"></span>-->
+    <!--</div>-->
+    <!--<br/>-->
+    <!--<p>By clicking login you agree to the terms and conditions</p>-->
+    <!--<p><a href="">Privacy Statement</a></p>-->
+
+    <!--<div>-->
+        <!--<button type="button" onclick="validateForm()">Login</button>-->
+    <!--</div>-->
+<!--</div>-->
