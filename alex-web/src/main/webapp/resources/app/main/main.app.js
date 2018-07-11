@@ -4,7 +4,7 @@
 angular.module('main', [
 
     //login specific
-    // 'login.services',
+    'main.services',
     'main.controllers',
     'main.directive'
 ])

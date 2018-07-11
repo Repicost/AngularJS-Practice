@@ -47,8 +47,8 @@
             <!--</div>-->
         <!--</form>-->
         <form>
-            <div>
-                <h3>Add Account for</h3>
+            <div ng-controller="registerController">
+                <h3>Add Account for {{accountName}}</h3>
                 <input type="text" name="n_accountName" id="accountName" placeholder="Account Name">
                 <br />
                 <input type="text" name="n_accountNumber" id="accountNumber" placeholder="Account Number">
@@ -65,7 +65,7 @@
     </div>
     <!--import angular resources-->
     <script src="resources/app/main/main.app.js"></script>
-    <!--<script src="resources/app/login/login.service.js"></script>-->
+    <script src="resources/app/main/main.service.js"></script>
     <script src="resources/app/main/main.controller.js"></script>
     <script src="resources/app/main/main.directive.js"></script>
     <!--<script type="text/javascript" src="resources/app/login/login.js"></script>-->

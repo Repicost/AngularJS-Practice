@@ -1,11 +1,10 @@
 /**
  * Created by diegosipin on 10/07/2018.
  */
-
 angular.module('main.controllers', [])
 
-    .controller('mainController' , ['$scope',
-        function($scope) {
+    .controller('mainController' , ['$scope', 'addAccountService',
+        function($scope, addAccountService) {
             $scope.accountTypes = {
                 "1": {"desc":"Savings/Current", "status":"Okay", "accounts":[
                     {"accountName": "An Account", "accountNumber": "120115", "amount" : 200, "limitAmount" : 5000, "extensionName": "A name"},
@@ -25,6 +24,17 @@ angular.module('main.controllers', [])
                 "13": {"desc":"Bill", "status":"", "accounts":[]},
                 "999": {"desc":"Dummy", "status":"", "accounts":[]}
             };
+
+            $scope.callAddAccountService = function (accountName) {
+                addAccountService.setAccountType(accountName);
+            }
         }
+    ])
+
+    .controller('registerController', ['$scope', 'addAccountService',
+        function ($scope, addAccountService) {
+            $scope.accounteName = addAccountService.getAccount();
+        }
+
     ])
     ;
