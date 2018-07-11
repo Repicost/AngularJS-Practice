@@ -5,7 +5,10 @@
     <title>Account Types Display</title>
 
     <!--imports-->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 </head>
 <style>
     table, th , td  {
@@ -20,15 +23,49 @@
     table tr:nth-child(even) {
         background-color: #ffffff;
     }
+    button {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
 </style>
 <body ng-app="main">
 
     <table-content></table-content>
 
+    <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
 
+        <!--<form method="post" action="/action_page_post.php">-->
+            <!--<div>-->
+                <!--<h3>Login information</h3>-->
+                <!--<label for="usrnm" class="ui-hidden-accessible">Username:</label>-->
+                <!--<input type="text" name="user" id="usrnm" placeholder="Username">-->
+                <!--<label for="pswd" class="ui-hidden-accessible">Password:</label>-->
+                <!--<input type="password" name="passw" id="pswd" placeholder="Password">-->
+                <!--<label for="log">Keep me logged in</label>-->
+                <!--<input type="checkbox" name="login" id="log" value="1" data-mini="true">-->
+                <!--<input type="submit" data-inline="true" value="Log in">-->
+            <!--</div>-->
+        <!--</form>-->
+        <form>
+            <div ng-controller="registerController">
+                <h3>Add Account for {{accountName}}</h3>
+                <input type="text" name="n_accountName" id="accountName" placeholder="Account Name">
+                <br />
+                <input type="text" name="n_accountNumber" id="accountNumber" placeholder="Account Number">
+                <br />
+                <input type="text" name="n_amount" id="amount" placeholder="Amount">
+                <br />
+                <input type="text" name="n_limit" id="limit" placeholder="limit">
+                <br />
+                <input type="text" name="n_extension" id="extension" placeholder="Extension Name">
+                <input type="submit" data-inline="true" value="Add">
+            </div>
+        </form>
+
+    </div>
     <!--import angular resources-->
     <script src="resources/app/main/main.app.js"></script>
-    <!--<script src="resources/app/login/login.service.js"></script>-->
+    <script src="resources/app/main/main.service.js"></script>
     <script src="resources/app/main/main.controller.js"></script>
     <script src="resources/app/main/main.directive.js"></script>
     <!--<script type="text/javascript" src="resources/app/login/login.js"></script>-->
