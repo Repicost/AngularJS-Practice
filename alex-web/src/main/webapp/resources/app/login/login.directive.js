@@ -12,4 +12,12 @@
         }
     })
 
-;
+    .directive('addFormContent', function () {
+        return {
+            scope: true,
+            restrict: 'E',
+            transclude: true,
+            replace: true,
+            templateUrl: 'resources/app/login/templates/addForm.html'
+        }
+    })
