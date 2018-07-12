@@ -25,16 +25,23 @@ angular.module('main.controllers', [])
                 "999": {"desc":"Dummy", "status":"", "accounts":[]}
             };
 
-            $scope.callAddAccountService = function (accountName) {
-                addAccountService.setAccountType(accountName);
-            }
+            var x = $scope.accountTypes[999].desc;
+            addAccountService.setAccountType(x);
         }
     ])
 
     .controller('registerController', ['$scope', 'addAccountService',
         function ($scope, addAccountService) {
-            $scope.accounteName = addAccountService.getAccount();
-        }
+            $scope.accountName = addAccountService.getAccount();
+            $scope.accountDesc;
+            $scope.accountNumber;
+            $scope.amount;
+            $scope.limit;
+            $scope.extension;
 
+            $scope.addData = function (index) {
+                var something = index;
+            }
+        }
     ])
     ;
