@@ -3,9 +3,16 @@
  */
 angular.module('main.controllers', [])
 
-    .controller('mainController' , ['$scope', 'addAccountService',
-        function($scope, addAccountService) {
-            $scope.accountTypes = {
+    .controller('mainController' , ['$scope',
+        function($scope) {
+            $scope.accountDesc = "";
+            $scope.accountNumber = "";
+            $scope.amount = "";
+            $scope.limit = "";
+            $scope.extension = "";
+            var keyValue = "";
+
+        $scope.accountTypes = {
                 "1": {"desc":"Savings/Current", "status":"Okay", "accounts":[
                     {"accountName": "An Account", "accountNumber": "120115", "amount" : 200, "limitAmount" : 5000, "extensionName": "A name"},
                     {"accountName": "Another Account", "accountNumber": "2014111606", "amount": 420}
@@ -25,23 +32,43 @@ angular.module('main.controllers', [])
                 "999": {"desc":"Dummy", "status":"", "accounts":[]}
             };
 
-            var x = $scope.accountTypes[999].desc;
-            addAccountService.setAccountType(x);
-        }
-    ])
+            // var x = $scope.accountTypes[999].desc;
+            // addAccountService.setAccountType(x);
 
-    .controller('registerController', ['$scope', 'addAccountService',
-        function ($scope, addAccountService) {
-            $scope.accountName = addAccountService.getAccount();
-            $scope.accountDesc;
-            $scope.accountNumber;
-            $scope.amount;
-            $scope.limit;
-            $scope.extension;
+            $scope.addToArray = function (key) {
+                $scope.accountTypes[key].accounts.push({
+                    accountName:   $scope.accountDesc,
+                    accountNumber: $scope.accountNumber,
+                    amount:        $scope.amount,
+                    limitAmount:   $scope.limit,
+                    extensionName: $scope.extension
+                });
+            };
 
-            $scope.addData = function (index) {
-                var something = index;
+            $scope.setKeyValue = function(key) {
+              keyValue = key;
+            };
+
+
+            $scope.deleteData = function (index) {
+               delete $scope.accountTypes[index].accounts[index];
             }
+
         }
     ])
+
+    // .controller('registerController', ['$scope', 'addAccountService',
+    //     function ($scope, addAccountService) {
+    //         $scope.accountName = addAccountService.getAccount();
+    //         // $scope.accountDesc;
+    //         // $scope.accountNumber;
+    //         // $scope.amount;
+    //         // $scope.limit;
+    //         // $scope.extension;
+    //
+    //         // $scope.addData = function (index) {
+    //         //     var something = index;
+    //         // }
+    //     }
+    // ])
     ;

@@ -29,42 +29,56 @@
     }
 </style>
 <body ng-app="main">
-
-    <table-content></table-content>
+    <div ng-controller="mainController">
+        <table-content></table-content>
 
         <!--<form method="post" action="/action_page_post.php">-->
-            <!--<div>-->
-                <!--<h3>Login information</h3>-->
-                <!--<label for="usrnm" class="ui-hidden-accessible">Username:</label>-->
-                <!--<input type="text" name="user" id="usrnm" placeholder="Username">-->
-                <!--<label for="pswd" class="ui-hidden-accessible">Password:</label>-->
-                <!--<input type="password" name="passw" id="pswd" placeholder="Password">-->
-                <!--<label for="log">Keep me logged in</label>-->
-                <!--<input type="checkbox" name="login" id="log" value="1" data-mini="true">-->
-                <!--<input type="submit" data-inline="true" value="Log in">-->
-            <!--</div>-->
+        <!--<div>-->
+        <!--<h3>Login information</h3>-->
+        <!--<label for="usrnm" class="ui-hidden-accessible">Username:</label>-->
+        <!--<input type="text" name="user" id="usrnm" placeholder="Username">-->
+        <!--<label for="pswd" class="ui-hidden-accessible">Password:</label>-->
+        <!--<input type="password" name="passw" id="pswd" placeholder="Password">-->
+        <!--<label for="log">Keep me logged in</label>-->
+        <!--<input type="checkbox" name="login" id="log" value="1" data-mini="true">-->
+        <!--<input type="submit" data-inline="true" value="Log in">-->
+        <!--</div>-->
         <!--</form>-->
 
 
-    <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
-        <add-Form-Content></add-Form-Content>
-    </div>
+        <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
+            <form name="addForm">
+                <h3>Add Account for {{key}}</h3>
+                <input type="text" name="n_accountName" id="accountName" ng-model="accountDesc" placeholder="Account Name">
+                <br />
+                <input type="text" name="n_accountNumber" id="accountNumber" ng-model="accountNumber" placeholder="Account Number">
+                <br />
+                <input type="text" name="n_amount" id="amount" ng-model="amount" placeholder="Amount">
+                <br />
+                <input type="text" name="n_limit" id="limit" ng-model="limit" placeholder="limit">
+                <br />
+                <input type="text" name="n_extension" id="extension" ng-model="extension" placeholder="Extension Name">
+
+                <button type="button" ng-click="addToArray(key)">Add Account</button>
+            </form>
+        </div>
 
         <!--<form>-->
-            <!--<div ng-controller="registerController">-->
-                <!--<h3>Add Account for {{accountName}}</h3>-->
-                <!--<input type="text" name="n_accountName" id="accountName" ng-model="accountDesc" placeholder="Account Name">-->
-                <!--<br />-->
-                <!--<input type="text" name="n_accountNumber" id="accountNumber" ng-model="accountNumber" placeholder="Account Number">-->
-                <!--<br />-->
-                <!--<input type="text" name="n_amount" id="amount" ng-model="amount" placeholder="Amount">-->
-                <!--<br />-->
-                <!--<input type="text" name="n_limit" id="limit" ng-model="limit" placeholder="limit">-->
-                <!--<br />-->
-                <!--<input type="text" name="n_extension" id="extension" ng-model="extension" placeholder="Extension Name">-->
-                <!--<button type="button" ng-click="addData($index)">Add Account</button>-->
-            <!--</div>-->
+        <!--<div ng-controller="registerController">-->
+        <!--<h3>Add Account for {{accountName}}</h3>-->
+        <!--<input type="text" name="n_accountName" id="accountName" ng-model="accountDesc" placeholder="Account Name">-->
+        <!--<br />-->
+        <!--<input type="text" name="n_accountNumber" id="accountNumber" ng-model="accountNumber" placeholder="Account Number">-->
+        <!--<br />-->
+        <!--<input type="text" name="n_amount" id="amount" ng-model="amount" placeholder="Amount">-->
+        <!--<br />-->
+        <!--<input type="text" name="n_limit" id="limit" ng-model="limit" placeholder="limit">-->
+        <!--<br />-->
+        <!--<input type="text" name="n_extension" id="extension" ng-model="extension" placeholder="Extension Name">-->
+        <!--<button type="button" ng-click="addData($index)">Add Account</button>-->
+        <!--</div>-->
         <!--</form>-->
+    </div>
 
     <!--import angular resources-->
     <script src="resources/app/main/main.app.js"></script>
