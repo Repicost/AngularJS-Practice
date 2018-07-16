@@ -1,8 +1,8 @@
 <div class="container">
     <p>ACCOUNTS</p>
 
-    <div ng-controller="mainController">
-        <table ng-repeat="x in accountTypes" border="1">
+    <div>
+        <table ng-repeat="(key, x) in accountTypes track by $index" border="1">
             <tr>
                 <th colspan="5">{{x.desc}}</th>
                 <th colspan="3">Status: {{x.status}}</th>
@@ -23,6 +23,27 @@
                 <!--<td> {{account.extensionName}}</td>-->
             <!--</tr>-->
 
+
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--<form name="addForm">-->
+                        <!--<h3>Add Account for {{key}}</h3>-->
+                        <!--<input type="text" name="n_accountName" id="accountName" ng-model="accountDesc" placeholder="Account Name">-->
+                        <!--<br />-->
+                        <!--<input type="text" name="n_accountNumber" id="accountNumber" ng-model="accountNumber" placeholder="Account Number">-->
+                        <!--<br />-->
+                        <!--<input type="text" name="n_amount" id="amount" ng-model="amount" placeholder="Amount">-->
+                        <!--<br />-->
+                        <!--<input type="text" name="n_limit" id="limit" ng-model="limit" placeholder="limit">-->
+                        <!--<br />-->
+                        <!--<input type="text" name="n_extension" id="extension" ng-model="extension" placeholder="Extension Name">-->
+
+                        <!--<button type="button" ng-click="addToArray(key)">Add Account</button>-->
+                    <!--</form>-->
+                <!--</td>-->
+            <!--</tr>-->
+
+
             <tr ng-repeat="account in x.accounts">
                 <td> {{account.accountName}} </td>
                 <td> {{account.accountNumber}} </td>
@@ -33,7 +54,8 @@
                 <th>Extension</th>
                 <td> {{account.extensionName}}</td>
                 <td><button name="editInfo">Edit</button></td>
-                <td><button name="deleteInfo">Delete</button></td>
+                <td><button name="deleteInfo" ng-click="deleteData(key)">Delete</button></td>
+
             </tr>
 
             <!--<tr ng-repeat="account in x.accounts">-->
