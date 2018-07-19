@@ -4,16 +4,15 @@
 angular.module('main.services', [])
 
     .factory('addAccountService', function () {
-        var _addAccountService = {};
-        var account = "";
+        var keyValue = {};
 
-        _addAccountService.setAccountType = function (accountType) {
-             account = accountType;
+        keyValue.setter = function (key) {
+            keyValue.value = key;
         };
 
-        _addAccountService.getAccount = function () {
-            return account;
+        keyValue.setter = function () {
+          return keyValue.value;
         };
 
-        return _addAccountService;
+        return keyValue;
     });

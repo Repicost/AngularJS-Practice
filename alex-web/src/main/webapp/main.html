@@ -45,19 +45,18 @@
         <!--</div>-->
         <!--</form>-->
 
-
         <div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">
             <form name="addForm">
-                <h3>Add Account for {{key}}</h3>
-                <input type="text" name="n_accountName" id="accountName" ng-model="accountDesc" placeholder="Account Name">
+                <h3>Add Account for <span ng-bind="getKeyValue()"></span></h3>
+                <input type="text" name="n_accountName" id="accountName" ng-model="initialiseValues.accountDesc" placeholder="Account Name">
                 <br />
-                <input type="text" name="n_accountNumber" id="accountNumber" ng-model="accountNumber" placeholder="Account Number">
+                <input type="text" name="n_accountNumber" id="accountNumber" ng-model="initialiseValues.accountNumber" placeholder="Account Number">
                 <br />
-                <input type="text" name="n_amount" id="amount" ng-model="amount" placeholder="Amount">
+                <input type="text" name="n_amount" id="amount" ng-model="initialiseValues.amount" placeholder="Amount">
                 <br />
-                <input type="text" name="n_limit" id="limit" ng-model="limit" placeholder="limit">
+                <input type="text" name="n_limit" id="limit" ng-model="initialiseValues.limit" placeholder="limit">
                 <br />
-                <input type="text" name="n_extension" id="extension" ng-model="extension" placeholder="Extension Name">
+                <input type="text" name="n_extension" id="extension" ng-model="initialiseValues.extension" placeholder="Extension Name">
 
                 <button type="button" ng-click="addToArray(key)">Add Account</button>
             </form>
