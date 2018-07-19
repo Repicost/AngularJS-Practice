@@ -5,14 +5,28 @@ angular.module('main.controllers', [])
 
     .controller('mainController' , ['$scope',
         function($scope) {
-            $scope.accountDesc = "";
-            $scope.accountNumber = "";
-            $scope.amount = "";
-            $scope.limit = "";
-            $scope.extension = "";
-            var keyValue = "";
 
-        $scope.accountTypes = {
+        // $scope.initialiseValues = function () {
+        //     $scope.accountDesc = "";
+        //     $scope.accountNumber = "";
+        //     $scope.amount = "";
+        //     $scope.limit = "";
+        //     $scope.extension = "";
+        // };
+
+            $scope.initialiseValues = {
+                accountDesc : '',
+                accountNumber : '',
+                amount : '',
+                limit : '',
+                extension : '',
+            };
+
+            var keyValue = {
+                key : ''
+            };
+
+            $scope.accountTypes = {
                 "1": {"desc":"Savings/Current", "status":"Okay", "accounts":[
                     {"accountName": "An Account", "accountNumber": "120115", "amount" : 200, "limitAmount" : 5000, "extensionName": "A name"},
                     {"accountName": "Another Account", "accountNumber": "2014111606", "amount": 420}
@@ -35,23 +49,38 @@ angular.module('main.controllers', [])
             // var x = $scope.accountTypes[999].desc;
             // addAccountService.setAccountType(x);
 
+            // $scope.addToArray = function (key) {
+            //     $scope.accountTypes[key].accounts.push({
+            //         accountName:   $scope.accountDesc,
+            //         accountNumber: $scope.accountNumber,
+            //         amount:        $scope.amount,
+            //         limitAmount:   $scope.limit,
+            //         extensionName: $scope.extension
+            //     });
+            // };
+
+            $scope.setKeyValue = function (key) {
+                keyValue.key = key;
+            };
+
+            $scope.getKeyValue = function () {
+              return keyValue.key;
+            };
+
             $scope.addToArray = function (key) {
+                console.log(key);
                 $scope.accountTypes[key].accounts.push({
-                    accountName:   $scope.accountDesc,
-                    accountNumber: $scope.accountNumber,
-                    amount:        $scope.amount,
-                    limitAmount:   $scope.limit,
-                    extensionName: $scope.extension
+                    accountName:   $scope.initialiseValues.accountDesc,
+                    accountNumber: $scope.initialiseValues.accountNumber,
+                    amount:        $scope.initialiseValues.amount,
+                    limitAmount:   $scope.initialiseValues.limit,
+                    extensionName: $scope.initialiseValues. extension
                 });
+                console.log($scope.accountTypes);
             };
-
-            $scope.setKeyValue = function(key) {
-              keyValue = key;
-            };
-
-
-            $scope.deleteData = function (index) {
-               delete $scope.accountTypes[index].accounts[index];
+            
+            $scope.deleteData = function (key, index) {
+                delete $scope.accountTypes[key].accounts[index];
             }
 
         }
