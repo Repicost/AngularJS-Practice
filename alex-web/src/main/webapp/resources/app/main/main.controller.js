@@ -6,20 +6,13 @@ angular.module('main.controllers', [])
     .controller('mainController' , ['$scope',
         function($scope) {
 
-        // $scope.initialiseValues = function () {
-        //     $scope.accountDesc = "";
-        //     $scope.accountNumber = "";
-        //     $scope.amount = "";
-        //     $scope.limit = "";
-        //     $scope.extension = "";
-        // };
 
             $scope.initialiseValues = {
                 accountDesc : '',
                 accountNumber : '',
                 amount : '',
                 limit : '',
-                extension : '',
+                extension : ''
             };
 
             var keyValue = {
