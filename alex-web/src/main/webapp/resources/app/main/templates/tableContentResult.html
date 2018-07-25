@@ -6,22 +6,9 @@
             <tr>
                 <th colspan="5">{{x.desc}}</th>
                 <th colspan="3"><span ng-bind="setKeyValue(key)">Status:</span> {{x.status}}</th>
-                <!--<td>{{x.accounts}}</td>-->
                 <th colspan="2"><a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">+</a></th>
             </tr>
             <hidden></hidden>
-            <!--<tr ng-repeat="account in x.accounts">-->
-                <!--<th>Account</th>-->
-                <!--<td> {{account.accountName}} </td>-->
-                <!--<th>Account Number</th>-->
-                <!--<td> {{account.accountNumber}} </td>-->
-                <!--<th>Amount</th>-->
-                <!--<td> PHP {{account.amount}} </td>-->
-                <!--<th>Limit Amount</th>-->
-                <!--<td> {{account.limitAmount}}</td>-->
-                <!--<th>Extension Name</th>-->
-                <!--<td> {{account.extensionName}}</td>-->
-            <!--</tr>-->
 
             <tr>
                 <td>
@@ -53,35 +40,11 @@
                 <td> {{account.limitAmount}}</td>
                 <th>Extension</th>
                 <td> {{account.extensionName}}</td>
-                <td><button name="editInfo">Edit</button></td>
+                <td><button name="editInfo" ng-click="ModalFunction()">Edit</button></td>
+                <!--<td><a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">edit</a></td>-->
                 <td><button name="deleteInfo" ng-click="deleteData(key, $index)">Delete</button></td>
             </tr>
 
-            <!--<tr ng-repeat="account in x.accounts">-->
-                <!--<td> {{account.accountName}} </td>-->
-                <!--<td> {{account.accountNumber}} </td>-->
-                <!--<td> {{account.amount}} </td>-->
-            <!--</tr>-->
-            <!--<td ng-repeat="account in x.accounts">{{account}}</td>-->
         </table>
     </div>
 </div>
-
-<!--<div data-role="main" class="ui-content">-->
-    <!--<a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all ui-icon-check ui-btn-icon-left">Show Popup Form</a>-->
-
-    <!--<div data-role="popup" id="myPopup" class="ui-content" style="min-width:250px;">-->
-        <!--<form method="post" action="/action_page_post.php">-->
-            <!--<div>-->
-                <!--<h3>Login information</h3>-->
-                <!--<label for="usrnm" class="ui-hidden-accessible">Username:</label>-->
-                <!--<input type="text" name="user" id="usrnm" placeholder="Username">-->
-                <!--<label for="pswd" class="ui-hidden-accessible">Password:</label>-->
-                <!--<input type="password" name="passw" id="pswd" placeholder="Password">-->
-                <!--<label for="log">Keep me logged in</label>-->
-                <!--<input type="checkbox" name="login" id="log" value="1" data-mini="true">-->
-                <!--<input type="submit" data-inline="true" value="Log in">-->
-            <!--</div>-->
-        <!--</form>-->
-    <!--</div>-->
-<!--</div>-->
