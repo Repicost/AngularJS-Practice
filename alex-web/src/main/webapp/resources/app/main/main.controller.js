@@ -5,6 +5,8 @@ angular.module('main.controllers', ['ui.bootstrap'])
 
     .controller('mainController' , ['$scope', '$uibModal',
         function($scope, $uibModal) {
+            $scope.editIndex = -1;
+            $scope.editKey = -1;
 
             $scope.initialiseValues = {
                 accountDesc : '',
@@ -20,8 +22,8 @@ angular.module('main.controllers', ['ui.bootstrap'])
 
             $scope.accountTypes = {
                 "1": {"desc":"Savings/Current", "status":"Okay", "accounts":[
-                    {"accountName": "An Account", "accountNumber": "120115", "amount" : 200, "limitAmount" : 5000, "extensionName": "A name"},
-                    {"accountName": "Another Account", "accountNumber": "2014111606", "amount": 420}
+                    {"accountDesc": "An Account", "accountNumber": "120115", "amount" : 200, "limit" : 5000, "extension": "A name"},
+                    {"accountDesc": "Another Account", "accountNumber": "2014111606", "amount": 420}
                     ]},
                 "2": {"desc":"Credit card", "status":"", "accounts":[]},
                 "3": {"desc":"Other", "status":"", "accounts":[]},
@@ -37,26 +39,37 @@ angular.module('main.controllers', ['ui.bootstrap'])
                 "13": {"desc":"Bill", "status":"", "accounts":[]},
                 "999": {"desc":"Dummy", "status":"", "accounts":[]}
             };
-            
+
+
+
+
+
             //experimental code start
-            $scope.edited = -1;
             $scope.editSometing = {
-                accountName : 'sejfvjbd',
+                accountDesc : '',
                 accountNumber : '',
                 amount : '',
-                limitAmount : '',
-                extensionName : ''
-            };
-
-            $scope.edit =function (index) {
-                $scope.edited = index;
+                limit : '',
+                extension : ''
             };
 
             $scope.finishedit = function () {
-                $scope.accountTypes['1'].accounts['1'] = $scope.editSometing;
-                $scope.edited = -1;
+                $scope.accountTypes[$scope.editKey].accounts[$scope.editIndex] = $scope.editSometing;
+                $scope.editIndex = -1;
+                $scope.editKey = -1;
+
             };
             //experimental code end
+
+            //TEMPORARY CODE FOR EDIT JUST TO MAKE IT WORK
+            $scope.passValuesToForm = function (key, index) {
+                $scope.editSometing = $scope.accountTypes[key].accounts[index];
+                $scope.editIndex = index;
+                $scope.editKey = key;
+            };
+
+            //TEMPORARY CODE FOR EDIT JUST TO MAKE IT WORK END
+
 
             $scope.setKeyValue = function (key) {
                 keyValue.key = key;
@@ -80,7 +93,6 @@ angular.module('main.controllers', ['ui.bootstrap'])
             
             $scope.deleteData = function (key, index) {
                 delete $scope.accountTypes[key].accounts[index];
-                $scope.finishedit();
             };
 
             //Modal experiment

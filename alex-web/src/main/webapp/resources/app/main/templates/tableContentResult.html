@@ -28,19 +28,38 @@
                         <button type="button" ng-click="addToArray(key);">Add Account</button>
                     </form>
                 </td>
+                <!--EDITINGFORM-->
+                <td>
+                    <form name="addForm">
+                        <h3>Edit account for {{key}}</h3>
+
+                        <input type="text" name="n_accountName" id="edit_accountName" ng-model="editSometing.accountDesc" placeholder="Account Name">
+                        <br />
+                        <input type="text" name="n_accountNumber" id="edit_accountNumber" ng-model="editSometing.accountNumber" placeholder="Account Number">
+                        <br />
+                        <input type="text" name="n_amount" id="edit_amount" ng-model="editSometing.amount" placeholder="Amount">
+                        <br />
+                        <input type="text" name="n_limit" id="edit_limit" ng-model="editSometing.limit" placeholder="limit">
+                        <br />
+                        <input type="text" name="n_extension" id="edit_extension" ng-model="editSometing.extension" placeholder="Extension Name">
+
+                        <button type="button" ng-click="finishedit()">Edit Account</button>
+                    </form>
+                </td>
+                <!--EDITINGFORM END-->
             </tr>
 
 
             <tr ng-repeat="account in x.accounts track by $index">
-                <td> {{account.accountName}} </td>
+                <td> {{account.accountDesc}} </td>
                 <td> {{account.accountNumber}} </td>
                 <th>Amount</th>
                 <td> PHP {{account.amount}} </td>
                 <th>Limit</th>
-                <td> {{account.limitAmount}}</td>
+                <td> {{account.limit}}</td>
                 <th>Extension</th>
-                <td> {{account.extensionName}}</td>
-                <td><button name="editInfo" ng-click="ModalFunction()">Edit</button></td>
+                <td> {{account.extension}}</td>
+                <td><button name="editInfo" ng-click="passValuesToForm(key, $index)">Edit</button></td>
                 <!--<td><a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">edit</a></td>-->
                 <td><button name="deleteInfo" ng-click="deleteData(key, $index)">Delete</button></td>
             </tr>
