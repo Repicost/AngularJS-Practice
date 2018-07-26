@@ -3,23 +3,17 @@
  */
 angular.module('main.controllers', [])
 
-    .controller('mainController' , ['$scope',
-        function($scope) {
-
-        // $scope.initialiseValues = function () {
-        //     $scope.accountDesc = "";
-        //     $scope.accountNumber = "";
-        //     $scope.amount = "";
-        //     $scope.limit = "";
-        //     $scope.extension = "";
-        // };
+    .controller('mainController' , ['$scope', '$uibModal',
+        function($scope, $uibModal) {
+            $scope.editIndex = -1;
+            $scope.editKey = -1;
 
             $scope.initialiseValues = {
                 accountDesc : '',
                 accountNumber : '',
                 amount : '',
                 limit : '',
-                extension : '',
+                extension : ''
             };
 
             var keyValue = {
@@ -28,8 +22,8 @@ angular.module('main.controllers', [])
 
             $scope.accountTypes = {
                 "1": {"desc":"Savings/Current", "status":"Okay", "accounts":[
-                    {"accountName": "An Account", "accountNumber": "120115", "amount" : 200, "limitAmount" : 5000, "extensionName": "A name"},
-                    {"accountName": "Another Account", "accountNumber": "2014111606", "amount": 420}
+                    {"accountDesc": "An Account", "accountNumber": "120115", "amount" : 200, "limit" : 5000, "extension": "A name"},
+                    {"accountDesc": "Another Account", "accountNumber": "2014111606", "amount": 420}
                     ]},
                 "2": {"desc":"Credit card", "status":"", "accounts":[]},
                 "3": {"desc":"Other", "status":"", "accounts":[]},
@@ -46,18 +40,32 @@ angular.module('main.controllers', [])
                 "999": {"desc":"Dummy", "status":"", "accounts":[]}
             };
 
-            // var x = $scope.accountTypes[999].desc;
-            // addAccountService.setAccountType(x);
+            //experimental code start
+            $scope.editSometing = {
+                accountDesc : '',
+                accountNumber : '',
+                amount : '',
+                limit : '',
+                extension : ''
+            };
 
-            // $scope.addToArray = function (key) {
-            //     $scope.accountTypes[key].accounts.push({
-            //         accountName:   $scope.accountDesc,
-            //         accountNumber: $scope.accountNumber,
-            //         amount:        $scope.amount,
-            //         limitAmount:   $scope.limit,
-            //         extensionName: $scope.extension
-            //     });
-            // };
+            $scope.finishedit = function () {
+                $scope.accountTypes[$scope.editKey].accounts[$scope.editIndex] = $scope.editSometing;
+                $scope.editIndex = -1;
+                $scope.editKey = -1;
+
+            };
+            //experimental code end
+
+            //TEMPORARY CODE FOR EDIT JUST TO MAKE IT WORK
+            $scope.passValuesToForm = function (key, index) {
+                $scope.editSometing = $scope.accountTypes[key].accounts[index];
+                $scope.editIndex = index;
+                $scope.editKey = key;
+            };
+
+            //TEMPORARY CODE FOR EDIT JUST TO MAKE IT WORK END
+
 
             $scope.setKeyValue = function (key) {
                 keyValue.key = key;
@@ -67,6 +75,7 @@ angular.module('main.controllers', [])
               return keyValue.key;
             };
 
+
             $scope.addToArray = function (key) {
                 console.log(key);
                 $scope.accountTypes[key].accounts.push({
@@ -74,30 +83,21 @@ angular.module('main.controllers', [])
                     accountNumber: $scope.initialiseValues.accountNumber,
                     amount:        $scope.initialiseValues.amount,
                     limitAmount:   $scope.initialiseValues.limit,
-                    extensionName: $scope.initialiseValues. extension
+                    extensionName: $scope.initialiseValues.extension
                 });
                 console.log($scope.accountTypes);
             };
             
             $scope.deleteData = function (key, index) {
                 delete $scope.accountTypes[key].accounts[index];
-            }
+            };
 
-        }
-    ])
+            //Modal experiment
+            $scope.ModalFunction = function () {
+                var modalInstance = $uibModal.open({
+                    templateUrl: 'resources/app/main/templates/addForm.html',
+                    backdrop: 'static'
+                });
+            };
 
-    // .controller('registerController', ['$scope', 'addAccountService',
-    //     function ($scope, addAccountService) {
-    //         $scope.accountName = addAccountService.getAccount();
-    //         // $scope.accountDesc;
-    //         // $scope.accountNumber;
-    //         // $scope.amount;
-    //         // $scope.limit;
-    //         // $scope.extension;
-    //
-    //         // $scope.addData = function (index) {
-    //         //     var something = index;
-    //         // }
-    //     }
-    // ])
-    ;
+        }]);
