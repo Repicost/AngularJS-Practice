@@ -1,7 +1,7 @@
 /**
  * Created by diegosipin on 10/07/2018.
  */
-angular.module('main.controllers', ['ui.bootstrap'])
+angular.module('main.controllers', [])
 
     .controller('mainController' , ['$scope', '$uibModal',
         function($scope, $uibModal) {
@@ -40,10 +40,6 @@ angular.module('main.controllers', ['ui.bootstrap'])
                 "999": {"desc":"Dummy", "status":"", "accounts":[]}
             };
 
-
-
-
-
             //experimental code start
             $scope.editSometing = {
                 accountDesc : '',
@@ -78,6 +74,7 @@ angular.module('main.controllers', ['ui.bootstrap'])
             $scope.getKeyValue = function () {
               return keyValue.key;
             };
+
 
             $scope.addToArray = function (key) {
                 console.log(key);
