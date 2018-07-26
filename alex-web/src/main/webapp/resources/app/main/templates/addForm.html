@@ -1,15 +1,23 @@
-<form>
-        <div ng-controller="registerController">
-            <h3>Add Account for {{accountName}}</h3>
-            <input type="text" name="n_accountName" id="accountName" ng-model="accountDesc" placeholder="Account Name">
-            <br />
-            <input type="text" name="n_accountNumber" id="accountNumber" ng-model="accountNumber" placeholder="Account Number">
-            <br />
-            <input type="text" name="n_amount" id="amount" ng-model="amount" placeholder="Amount">
-            <br />
-            <input type="text" name="n_limit" id="limit" ng-model="limit" placeholder="limit">
-            <br />
-            <input type="text" name="n_extension" id="extension" ng-model="extension" placeholder="Extension Name">
-            <button type="button" ng-click="addData($index)">Add Account</button>
-        </div>
-    </form>
+<div>
+    <div>
+        <form>
+            <div ng-controller="mainController">
+                <h3>Add Account for {{accountName}}</h3>
+                <input type="text" name="n_accountName" id="accountName" ng-model="accountDesc" placeholder="Account Name">
+                <br />
+                <input type="text" name="n_accountNumber" id="accountNumber" ng-model="accountNumber" placeholder="Account Number">
+                <br />
+                <input type="text" name="n_amount" id="amount" ng-model="amount" placeholder="Amount">
+                <br />
+                <input type="text" name="n_limit" id="limit" ng-model="limit" placeholder="limit">
+                <br />
+                <input type="text" name="n_extension" id="extension" ng-model="extension" placeholder="Extension Name">
+                <button type="button" ng-click="addData($index)">Add Account</button>
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-warning" type="button"
+                ng-click="close()">Close</button>
+    </div>
+</div>
