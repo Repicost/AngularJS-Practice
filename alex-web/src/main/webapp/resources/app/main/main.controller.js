@@ -1,7 +1,7 @@
 /**
  * Created by diegosipin on 10/07/2018.
  */
-angular.module('main.controllers', [])
+angular.module('main.controllers', ['ui.bootstrap'])
 
     .controller('mainController' , ['$scope', '$uibModal',
         function($scope, $uibModal) {
@@ -66,7 +66,6 @@ angular.module('main.controllers', [])
 
             //TEMPORARY CODE FOR EDIT JUST TO MAKE IT WORK END
 
-
             $scope.setKeyValue = function (key) {
                 keyValue.key = key;
             };
@@ -79,25 +78,29 @@ angular.module('main.controllers', [])
             $scope.addToArray = function (key) {
                 console.log(key);
                 $scope.accountTypes[key].accounts.push({
-                    accountName:   $scope.initialiseValues.accountDesc,
+                    accountDesc:   $scope.initialiseValues.accountDesc,
                     accountNumber: $scope.initialiseValues.accountNumber,
                     amount:        $scope.initialiseValues.amount,
-                    limitAmount:   $scope.initialiseValues.limit,
-                    extensionName: $scope.initialiseValues.extension
+                    limit:         $scope.initialiseValues.limit,
+                    extension:     $scope.initialiseValues.extension
                 });
                 console.log($scope.accountTypes);
             };
             
             $scope.deleteData = function (key, index) {
-                delete $scope.accountTypes[key].accounts[index];
+                delete $scope.accountTypes[key].accounts.splice(index, 1);
             };
 
             //Modal experiment
             $scope.ModalFunction = function () {
                 var modalInstance = $uibModal.open({
-                    templateUrl: 'resources/app/main/templates/addForm.html',
-                    backdrop: 'static'
+                    animation: false,
+                    backdrop: 'static',
+                    templateUrl: 'resources/app/main/templates/addForm.html'
                 });
             };
+            //Modal experiment end
 
-        }]);
+        }
+    ])
+;

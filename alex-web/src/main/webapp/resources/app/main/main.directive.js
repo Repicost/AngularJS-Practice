@@ -4,11 +4,14 @@
     angular.module('main.directive', [])
         .directive('tableContent', function(){
             return {
-                scope: true,
                 restrict: 'E',
                 transclude: true,
                 replace: true,
                 templateUrl: 'resources/app/main/templates/tableContentResult.html'
             }
         })
+
+    //Modal experiment start
+
+    //Modal experiments end
 ;
