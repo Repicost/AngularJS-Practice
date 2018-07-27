@@ -3,10 +3,14 @@
  */
 angular.module('main.controllers', ['ui.bootstrap'])
 
-    .controller('mainController' , ['$scope', '$uibModal',
-        function($scope, $uibModal) {
+    .controller('mainController' , ['$scope', '$uibModal', 'loginService',
+        function($scope, $uibModal, loginService) {
             $scope.editIndex = -1;
             $scope.editKey = -1;
+
+            $scope.aliasValue = {
+              myAliasValue: loginService.getter()
+            };
 
             $scope.initialiseValues = {
                 accountDesc : '',
