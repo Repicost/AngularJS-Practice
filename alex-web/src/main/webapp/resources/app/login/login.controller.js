@@ -18,7 +18,7 @@ angular.module('login.controllers', [])
             };
 
             $scope.setAliasValue = function () {
-                loginService.setter('AAAAAasd');
+                loginService.setter($scope.alias.value);
                 $window.location.href = 'main.html';
             }
         }
