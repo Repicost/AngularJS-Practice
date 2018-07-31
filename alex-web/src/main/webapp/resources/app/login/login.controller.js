@@ -3,14 +3,20 @@
  */
 angular.module('login.controllers', [])
 
-    .controller('LoginValidationController' , ['$scope', '$window',
-        function ($scope, $window) {
-           $scope.validateForm = function(){
+    .controller('LoginValidationController' , ['$scope', '$window', 'loginService',
+        function ($scope, $window, loginService) {
+        $scope.alias = {
+            data: ""
+        };
+
+        $scope.validateForm = function(){
                 if ($scope.username === "Diego" && $scope.password === "12345"){
+                    loginService.saveAlias($scope.alias.data);
                     $window.location.href = 'main.html';
                 } else {
                     alert("Invalid username or password!");
                 }
             };
+
         }
     ]);

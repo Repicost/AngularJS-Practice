@@ -3,7 +3,10 @@
  */
 angular.module('main', [
 
-    //login specific
+    //From Login
+    'login.services',
+
+    //From main
     'main.services',
     'main.controllers',
     'main.directive'
