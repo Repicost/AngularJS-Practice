@@ -11,6 +11,8 @@
 
     <!--angularJS-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!--angular routing-->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.28//angular-route.min.js"></script>
     <!--UI-bootstrap-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
     <!--Bootstrap-->
@@ -55,8 +57,29 @@
             </form>
         </div>
 
-    </div>
+        <!--EDIT POPUP EXPERIMENT-->
+        <!--<div data-role="popup" id="edit_myPopup" class="ui-content" style="min-width: 250px;">-->
+            <!--<form name="editForm">-->
+                <!--<h3>Edit account</h3>-->
 
+                <!--<input type="text" name="n_accountName" id="edit_accountName" ng-model="editSometing.accountDesc" placeholder="Account Name">-->
+                <!--<br />-->
+                <!--<input type="text" name="n_accountNumber" id="edit_accountNumber" ng-model="editSometing.accountNumber" placeholder="Account Number">-->
+                <!--<br />-->
+                <!--<input type="text" name="n_amount" id="edit_amount" ng-model="editSometing.amount" placeholder="Amount">-->
+                <!--<br />-->
+                <!--<input type="text" name="n_limit" id="edit_limit" ng-model="editSometing.limit" placeholder="limit">-->
+                <!--<br />-->
+                <!--<input type="text" name="n_extension" id="edit_extension" ng-model="editSometing.extension" placeholder="Extension Name">-->
+
+                <!--<button type="button" ng-click="finishedit()">Edit Account</button>-->
+            <!--</form>-->
+        <!--</div>-->
+        <!--EDIT POPUP EXPERIMENT END-->
+
+    </div>
+    <!--importing login angular resource-->
+    <script src="resources/app/login/login.service.js"></script>
     <!--import angular resources-->
     <script src="resources/app/main/main.app.js"></script>
     <script src="resources/app/main/main.service.js"></script>
