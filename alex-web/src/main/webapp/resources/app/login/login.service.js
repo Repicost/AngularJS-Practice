@@ -3,18 +3,31 @@
  */
 angular.module('login.services', [])
 
-    .factory('loginService', function () {
-        var aliasValue = {
-            value: ''
-        };
+    .factory('loginService', function ($window) {
+        // var aliasValue = {
+        //     value: ''
+        // };
+        //
+        // aliasValue.saveAlias = function (data) {
+        //     aliasValue.value = data;
+        // };
+        //
+        // aliasValue.getAlias = function () {
+        //     return aliasValue.value;
+        // };
+        //
+        // return aliasValue;
 
-        aliasValue.setter = function (newValue) {
-            aliasValue.value = newValue.toString();
-        };
+        // var aliasValue = {
+        //     data: ""
+        // };
 
-        aliasValue.getter = function () {
-            return aliasValue.value;
-        };
-
-        return aliasValue;
+        return{
+            saveAlias: function(data) {
+                $window.localStorage.setItem("Alias", data)
+            },
+            getAlias: function () {
+               return $window.localStorage.getItem("Alias")
+            }
+        }
     });

@@ -9,7 +9,7 @@ angular.module('main.controllers', ['ui.bootstrap'])
             $scope.editKey = -1;
 
             $scope.aliasValue = {
-              myAliasValue: loginService.getter()
+              myAliasValue: loginService.getAlias()
             };
 
             $scope.initialiseValues = {
@@ -57,7 +57,6 @@ angular.module('main.controllers', ['ui.bootstrap'])
                 $scope.accountTypes[$scope.editKey].accounts[$scope.editIndex] = $scope.editSometing;
                 $scope.editIndex = -1;
                 $scope.editKey = -1;
-
             };
             //experimental code end
 
