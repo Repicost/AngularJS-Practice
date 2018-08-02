@@ -1,7 +1,19 @@
 /**
  * Created by diegosipin on 05/07/2018.
  */
-angular.module('login.controllers', [])
+'use strict';
+
+angular.module('login.controllers', ['ngRoute'])
+    .config(function ($routeProvider) {
+        // EXPERIMENTAL CODE START
+        $routeProvider.
+            when('/main', {
+                templateUrl: 'main.html',
+                alias: '$scope.alias.data'
+            });
+
+        // EXPERIMENTAL CODE END
+    })
 
     .controller('LoginValidationController' , ['$scope', '$window', 'loginService',
         function ($scope, $window, loginService) {
@@ -16,9 +28,9 @@ angular.module('login.controllers', [])
                 } else {
                     alert("Invalid username or password!");
                 }
-            };
-
-        // EXPERIMENTAL CODE START
+        };
 
         }
-    ]);
+    ])
+
+;

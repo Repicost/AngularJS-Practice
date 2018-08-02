@@ -60,14 +60,12 @@ angular.module('main.controllers', ['ui.bootstrap'])
             };
             //experimental code end
 
-            //TEMPORARY CODE FOR EDIT JUST TO MAKE IT WORK
             $scope.passValuesToForm = function (key, index) {
                 $scope.editSometing = $scope.accountTypes[key].accounts[index];
                 $scope.editIndex = index;
                 $scope.editKey = key;
             };
 
-            //TEMPORARY CODE FOR EDIT JUST TO MAKE IT WORK END
 
             $scope.setKeyValue = function (key) {
                 keyValue.key = key;

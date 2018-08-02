@@ -20,4 +20,7 @@
             replace: true,
             templateUrl: 'resources/app/login/templates/addForm.html'
         }
-    })
+    }
+
+
+    );
