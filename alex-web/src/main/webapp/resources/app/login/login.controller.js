@@ -5,13 +5,23 @@
 
 angular.module('login.controllers', ['ngRoute'])
     .config(function ($routeProvider) {
+        // // EXPERIMENTAL CODE START
+        // $routeProvider.
+        //     when('/', {
+        //         templateUrl: 'resources/main.html',
+        //         controller: 'resources/mainController',
+        //         alias: '$scope.alias.data'
+        //     });
+        //
+        // // EXPERIMENTAL CODE END
         // EXPERIMENTAL CODE START
         $routeProvider.
-            when('/main', {
-                templateUrl: 'main.html',
-                alias: '$scope.alias.data'
-            });
-
+        when('/main', {
+            templateUrl: 'main.html',
+            // controller: 'resources/app/main/mainController',
+            controller: 'amainController',
+            alias: '$scope.alias.data'
+        });
         // EXPERIMENTAL CODE END
     })
 
