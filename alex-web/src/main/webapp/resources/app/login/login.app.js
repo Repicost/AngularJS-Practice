@@ -5,6 +5,9 @@ angular.module('login', [
     //Others
     'ngRoute',
 
+    //From main
+    'main.controllers',
+
     //login specific
     'login.services',
     'login.controllers',

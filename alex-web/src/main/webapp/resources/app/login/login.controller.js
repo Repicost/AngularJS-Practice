@@ -4,23 +4,29 @@
 'use strict';
 
 angular.module('login.controllers', ['ngRoute'])
+
+    // .config(function ($routeProvider) {
+    //     // EXPERIMENTAL CODE START
+    //     $routeProvider.
+    //     when('/main', {
+    //         templateUrl: 'resources/app/main/templates/tableContentResult.html',
+    //         // templateUrl: 'main.html',
+    //         // controller: 'resources/app/main/mainController',
+    //         controller: 'mainController',
+    //         alias: '$scope.alias.data'
+    //     });
+    //     // EXPERIMENTAL CODE END
+    // })
+
     .config(function ($routeProvider) {
-        // // EXPERIMENTAL CODE START
-        // $routeProvider.
-        //     when('/', {
-        //         templateUrl: 'resources/main.html',
-        //         controller: 'resources/mainController',
-        //         alias: '$scope.alias.data'
-        //     });
-        //
-        // // EXPERIMENTAL CODE END
         // EXPERIMENTAL CODE START
         $routeProvider.
-        when('/main', {
-            templateUrl: 'main.html',
+        when('/main/:alias', {
+            templateUrl: 'resources/app/main/templates/tableContentResult.html',
+            // templateUrl: 'main.html',
             // controller: 'resources/app/main/mainController',
-            controller: 'amainController',
-            alias: '$scope.alias.data'
+            controller: 'mainController'
+            // alias: 'AAA'
         });
         // EXPERIMENTAL CODE END
     })

@@ -2,14 +2,16 @@
  * Created by diegosipin on 10/07/2018.
  */
 angular.module('main.controllers', ['ui.bootstrap'])
+// angular.module('main.controllers')
 
-    .controller('mainController' , ['$scope', '$uibModal', 'loginService',
-        function($scope, $uibModal, loginService) {
+    .controller('mainController' , ['$scope', '$uibModal', 'loginService', '$routeParams',
+        function($scope, $uibModal, loginService, $routeParams) {
             $scope.editIndex = -1;
             $scope.editKey = -1;
 
             $scope.aliasValue = {
-              myAliasValue: loginService.getAlias()
+              // myAliasValue: loginService.getAlias()
+                myAliasValue: $routeParams.alias
             };
 
             $scope.initialiseValues = {

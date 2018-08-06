@@ -10,49 +10,92 @@
             </tr>
             <hidden></hidden>
 
-            <tr>
+            <!--<tr>-->
+                <!--<td>-->
+                    <!--<form name="addForm">-->
+                        <!--<h3>Add Account for {{key}}</h3>-->
+                        <!--<label>Account Name</label>-->
+                        <!--<input type="text" name="n_accountName" id="accountName" ng-model="initialiseValues.accountDesc" placeholder="Account Name">-->
+                        <!--<br />-->
+                        <!--<label>Account Number</label>-->
+                        <!--<input type="text" name="n_accountNumber" id="accountNumber" ng-model="initialiseValues.accountNumber" placeholder="Account Number">-->
+                        <!--<br />-->
+                        <!--<label>Amount</label>-->
+                        <!--<input type="text" name="n_amount" id="amount" ng-model="initialiseValues.amount" placeholder="Amount">-->
+                        <!--<br />-->
+                        <!--<label ng-show="key == 2">limit</label>-->
+                        <!--<input  ng-show="key == 2" type="text" name="n_limit" id="limit" ng-model="initialiseValues.limit" placeholder="limit">-->
+                        <!--<br />-->
+                        <!--<label ng-show="key == 2">Extension</label>-->
+                        <!--<input  ng-show="key == 2" type="text" name="n_extension" id="extension" ng-model="initialiseValues.extension" placeholder="Extension Name">-->
+
+                        <!--<button type="button" ng-click="addToArray(key);">Add Account</button>-->
+                    <!--</form>-->
+                <!--</td>-->
                 <td>
                     <form name="addForm">
                         <h3>Add Account for {{key}}</h3>
                         <label>Account Name</label>
-                        <input type="text" name="n_accountName" id="accountName" ng-model="initialiseValues.accountDesc" placeholder="Account Name">
+                        <input type="text" name="n_accountName" ng-model="initialiseValues.accountDesc" placeholder="Account Name">
                         <br />
                         <label>Account Number</label>
-                        <input type="text" name="n_accountNumber" id="accountNumber" ng-model="initialiseValues.accountNumber" placeholder="Account Number">
+                        <input type="text" name="n_accountNumber" ng-model="initialiseValues.accountNumber" placeholder="Account Number">
                         <br />
                         <label>Amount</label>
-                        <input type="text" name="n_amount" id="amount" ng-model="initialiseValues.amount" placeholder="Amount">
+                        <input type="text" name="n_amount" ng-model="initialiseValues.amount" placeholder="Amount">
                         <br />
                         <label ng-show="key == 2">limit</label>
-                        <input  ng-show="key == 2" type="text" name="n_limit" id="limit" ng-model="initialiseValues.limit" placeholder="limit">
+                        <input  ng-show="key == 2" type="text" name="n_limit" ng-model="initialiseValues.limit" placeholder="limit">
                         <br />
                         <label ng-show="key == 2">Extension</label>
-                        <input  ng-show="key == 2" type="text" name="n_extension" id="extension" ng-model="initialiseValues.extension" placeholder="Extension Name">
+                        <input  ng-show="key == 2" type="text" name="n_extension" ng-model="initialiseValues.extension" placeholder="Extension Name">
 
                         <button type="button" ng-click="addToArray(key);">Add Account</button>
                     </form>
                 </td>
 
 
+
                 <!--EDITINGFORM-->
-                <!--<a href="#" ng-click="$event.preventDefault();logout()" />-->
+                <a href="#" ng-click="$event.preventDefault();logout()" />
+                <!--<td>-->
+                    <!--<form name="editForm">-->
+                        <!--<h3>Edit account for {{key}}</h3>-->
+                        <!--<label>Account Name</label>-->
+                        <!--<input type="text" name="n_accountName" id="edit_accountName" ng-model="editSometing.accountDesc" placeholder="Account Name">-->
+                        <!--<br />-->
+                        <!--<label>Account Number</label>-->
+                        <!--<input type="text" name="n_accountNumber" id="edit_accountNumber" ng-model="editSometing.accountNumber" placeholder="Account Number">-->
+                        <!--<br />-->
+                        <!--<label>Amount</label>-->
+                        <!--<input type="text" name="n_amount" id="edit_amount" ng-model="editSometing.amount" placeholder="Amount">-->
+                        <!--<br />-->
+                        <!--<label ng-show="key == 2">limit</label>-->
+                        <!--<input  ng-show="key == 2" type="text" name="n_limit" id="edit_limit" ng-model="editSometing.limit" placeholder="limit">-->
+                        <!--<br />-->
+                        <!--<label ng-show="key == 2">Extension</label>-->
+                        <!--<input  ng-show="key == 2" type="text" name="n_extension" id="edit_extension" ng-model="editSometing.extension" placeholder="Extension Name">-->
+
+                        <!--<button type="button" ng-click="finishedit()">Edit Account</button>-->
+                    <!--</form>-->
+                <!--</td>-->
                 <td>
                     <form name="editForm">
                         <h3>Edit account for {{key}}</h3>
                         <label>Account Name</label>
-                        <input type="text" name="n_accountName" id="edit_accountName" ng-model="editSometing.accountDesc" placeholder="Account Name">
+                        <input type="text" name="n_accountName" ng-model="editSometing.accountDesc" placeholder="Account Name">
                         <br />
                         <label>Account Number</label>
-                        <input type="text" name="n_accountNumber" id="edit_accountNumber" ng-model="editSometing.accountNumber" placeholder="Account Number">
+                        <input type="text" name="n_accountNumber" ng-model="editSometing.accountNumber" placeholder="Account Number">
                         <br />
                         <label>Amount</label>
-                        <input type="text" name="n_amount" id="edit_amount" ng-model="editSometing.amount" placeholder="Amount">
+                        <input type="text" name="n_amount" ng-model="editSometing.amount" placeholder="Amount">
                         <br />
                         <label ng-show="key == 2">limit</label>
-                        <input  ng-show="key == 2" type="text" name="n_limit" id="edit_limit" ng-model="editSometing.limit" placeholder="limit">
+                        <input  ng-show="key == 2" type="text" name="n_limit" ng-model="editSometing.limit" placeholder="limit">
                         <br />
                         <label ng-show="key == 2">Extension</label>
-                        <input  ng-show="key == 2" type="text" name="n_extension" id="edit_extension" ng-model="editSometing.extension" placeholder="Extension Name">
+                        <input  ng-show="key == 2" type="text" name="n_extension" ng-model="editSometing.extension" placeholder="Extension Name">
 
                         <button type="button" ng-click="finishedit()">Edit Account</button>
                     </form>
