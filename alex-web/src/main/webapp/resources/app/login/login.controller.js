@@ -5,7 +5,7 @@
 
 angular.module('login.controllers', ['ui.router'])
 
-    .config(function ($stateProvider, $urlRouterProvider) {
+    .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
         // $routeProvider.
         //     when('/main/:alias', {
         //         templateUrl: 'resources/app/main/templates/tableContentResult.html',
@@ -26,10 +26,12 @@ angular.module('login.controllers', ['ui.router'])
                 templateUrl: 'resources/app/login/templates/loginForm.html'
             })
             .state('main', {
-                url: '/main',
+                url: '/main/:alias',
                 templateUrl: 'resources/app/main/templates/tableContentResult.html',
                 controller: 'mainController'
             });
+
+        $locationProvider.html5Mode(true);
 
     })
 

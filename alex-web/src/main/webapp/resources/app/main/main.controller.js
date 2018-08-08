@@ -4,14 +4,14 @@
 angular.module('main.controllers', ['ui.bootstrap'])
 // angular.module('main.controllers')
 
-    .controller('mainController' , ['$scope', '$uibModal',
-        function($scope, $uibModal) {
+    .controller('mainController' , ['$scope', '$uibModal', '$stateParams',
+        function($scope, $uibModal, $stateParams) {
             $scope.editIndex = -1;
             $scope.editKey = -1;
 
-            // $scope.aliasValue = {
-            //     myAliasValue: $routeParams.alias
-            // };
+            $scope.aliasValue = {
+                myAliasValue: $stateParams.alias
+            };
 
             $scope.initialiseValues = {
                 accountDesc : '',
