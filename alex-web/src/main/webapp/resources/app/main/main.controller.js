@@ -10,7 +10,6 @@ angular.module('main.controllers', ['ui.bootstrap'])
             $scope.editKey = -1;
 
             $scope.aliasValue = {
-              // myAliasValue: loginService.getAlias()
                 myAliasValue: $routeParams.alias
             };
 

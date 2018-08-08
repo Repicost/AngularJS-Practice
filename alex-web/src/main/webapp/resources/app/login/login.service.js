@@ -8,12 +8,10 @@ angular.module('login.services', [])
 
             saveAlias: function(data) {
                 $window.localStorage.setItem("Alias", data)
-                // $routeParams.alias = data;
             },
 
             getAlias: function () {
                return $window.localStorage.getItem("Alias")
-                // return $routeParams.alias;
             }
         }
     });
