@@ -18,18 +18,42 @@
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 </head>
-
+<style>
+    table, th , td  {
+        border: 1px solid grey;
+        border-collapse: collapse;
+        padding: 15px;
+        margin: 15px;
+    }
+    table tr:nth-child(odd) {
+        background-color: #f1f1f1;
+    }
+    table tr:nth-child(even) {
+        background-color: #ffffff;
+    }
+    button {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+</style>
 <body ng-app="login" >
-    <div>
-        <div>
-            <h1>Login!</h1>
+    <div class="containter">
+        <div id="fixedContent"></div>
+        <div id="routedContent">
+
         </div>
+    </div>
 
+
+
+    <div>
         <login-form-content ng-controller="LoginValidationController"></login-form-content>
-
     </div>
 
     <div ng-view></div>
+
+
+
     <!--import angular resources-->
     <script src="resources/app/login/login.app.js"></script>
     <script src="resources/app/login/login.service.js"></script>

@@ -10,8 +10,4 @@
                 templateUrl: 'resources/app/main/templates/tableContentResult.html'
             }
         })
-
-    //Modal experiment start
-
-    //Modal experiments end
 ;
