@@ -11,10 +11,17 @@
 
     <!--angularJS-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
     <!--angular routing-->
-    <script src="//code.angularjs.org/snapshot/angular-route.js"></script>
+    <!--<script src="//code.angularjs.org/snapshot/angular-route.js"></script>-->
+
+    <!--ui-route -->
+    <!--<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.8/angular-ui-router.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.19/angular-ui-router.min.js"></script>
+
     <!--UI-bootstrap-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.5.0/ui-bootstrap-tpls.min.js"></script>
+
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 </head>
@@ -37,20 +44,29 @@
     }
 </style>
 <body ng-app="login" >
-    <div class="containter">
-        <div id="fixedContent"></div>
-        <div id="routedContent">
+    <!--<div class="containter">-->
+        <!--<div id="fixedContent">-->
+            <!--<p>My Routing Application (And then Some lol)</p>-->
+            <!--<div>-->
+                <!--<login-form-content ng-controller="LoginValidationController"></login-form-content>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div id="routedContent">-->
+            <!--<div ng-view></div>-->
+        <!--</div>-->
+    <!--</div>-->
 
+    <div class="containter">
+        <div id="fixedContent">
+            <p>My Routing Application (And then Some lol)</p>
+            <!--<div>-->
+                <!--<login-form-content ng-controller="LoginValidationController"></login-form-content>-->
+            <!--</div>-->
+        </div>
+        <div id="routedContent">
+            <div ui-view></div>
         </div>
     </div>
-
-
-
-    <div>
-        <login-form-content ng-controller="LoginValidationController"></login-form-content>
-    </div>
-
-    <div ng-view></div>
 
 
 
