@@ -3,7 +3,7 @@
  */
 angular.module('login', [
     //Others
-    'ngRoute',
+    // 'ngRoute',
 
     //From main
     'main.controllers',
