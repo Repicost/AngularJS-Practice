@@ -19,11 +19,7 @@
     <br/>
     <p>By clicking login you agree to the terms and conditions</p>
     <p><a href="">Privacy Statement</a></p>
-    <p>{{alias.data}}</p>
-    <!--<div>-->
-        <!--<button type="button" ng-click="validateForm()">Login</button>-->
-    <!--</div>-->
     <div>
-        <a ui-sref="main({value: alias.data})" class="ui-btn ui-btn-inline ui-corner-all">Login</a>
+        <a ui-sref="main({alias: alias.data})" class="ui-btn ui-btn-inline ui-corner-all">Login</a>
     </div>
 </form>

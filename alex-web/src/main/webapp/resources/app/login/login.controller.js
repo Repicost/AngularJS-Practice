@@ -6,13 +6,6 @@
 angular.module('login.controllers', ['ui.router'])
 
     .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-        // $routeProvider.
-        //     when('/main/:alias', {
-        //         templateUrl: 'resources/app/main/templates/tableContentResult.html',
-        //         controller: 'mainController'
-        //     });
-
-        // $urlRouterProvider.otherwise('/login');
 
         $urlRouterProvider.otherwise(function($injector){
             $injector.invoke(['$state', function($state) {
@@ -26,9 +19,15 @@ angular.module('login.controllers', ['ui.router'])
                 templateUrl: 'resources/app/login/templates/loginForm.html'
             })
             .state('main', {
-                url: '/main/:alias',
+                url: '/main/',
                 templateUrl: 'resources/app/main/templates/tableContentResult.html',
-                controller: 'mainController'
+                controller: 'mainController',
+                params: {
+                    alias: {
+                        value: 'default',
+                        squash: false
+                    }
+                }
             });
 
         $locationProvider.html5Mode(true);
