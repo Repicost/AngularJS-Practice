@@ -3,14 +3,34 @@
  */
 'use strict';
 
-angular.module('login.controllers', ['ngRoute'])
+angular.module('login.controllers', ['ui.router'])
 
-    .config(function ($routeProvider) {
-        $routeProvider.
-            when('/main/:alias', {
+    .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+
+        $urlRouterProvider.otherwise(function($injector){
+            $injector.invoke(['$state', function($state) {
+                $state.go('login');
+            }]);
+        });
+
+        $stateProvider
+            .state('login', {
+                url: '/login',
+                templateUrl: 'resources/app/login/templates/loginForm.html'
+            })
+            .state('main', {
+                url: '/main/',
                 templateUrl: 'resources/app/main/templates/tableContentResult.html',
-                controller: 'mainController'
+                controller: 'mainController',
+                params: {
+                    alias: {
+                        value: 'default',
+                        squash: false
+                    }
+                }
             });
+
+        $locationProvider.html5Mode(true);
 
     })
 
