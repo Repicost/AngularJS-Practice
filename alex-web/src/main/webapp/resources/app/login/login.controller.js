@@ -16,8 +16,10 @@ angular.module('login.controllers', ['ui.router'])
         $stateProvider
             .state('login', {
                 url: '/login',
-                templateUrl: 'resources/app/login/templates/loginForm.html'
+                templateUrl: 'resources/app/login/templates/loginForm.html',
+                controller: 'LoginValidationController'
             })
+
             .state('main', {
                 url: '/main/',
                 templateUrl: 'resources/app/main/templates/tableContentResult.html',
@@ -34,16 +36,12 @@ angular.module('login.controllers', ['ui.router'])
 
     })
 
-    .controller('LoginValidationController' , ['$scope', '$window', 'loginService',
-        function ($scope, $window, loginService) {
-        $scope.alias = {
-            data: ""
-        };
+    .controller('LoginValidationController' , ['$scope', '$window', '$state',
+        function ($scope, $window, $state) {
 
-        $scope.validateForm = function(){
+        $scope.validateForm = function(data){
                 if ($scope.username === "Diego" && $scope.password === "12345"){
-                    loginService.saveAlias($scope.alias.data);
-                    $window.location.href = 'main.html';
+                    $state.go('main', {alias: data});
                 } else {
                     alert("Invalid username or password!");
                 }
